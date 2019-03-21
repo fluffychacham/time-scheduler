@@ -27,12 +27,14 @@
               "src/favicon.ico",
               "src/assets",
               "src/electron-main.js",
-              "src/package.json"
+              "src/package.json",
+              "src/script/require.js"
             ],
             "styles": [
               "src/styles.sass"
             ],
             "scripts": [
+              "src/script/require.js"
             ],
             "es5BrowserSupport": true
           },
