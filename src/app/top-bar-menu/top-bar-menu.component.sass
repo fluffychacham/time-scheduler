@@ -1,0 +1,147 @@
+@import '../../css/variables'
+
+nav
+    font-family: $font-family;
+    height: 3rem;
+    background-color: $dark;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: .25rem;
+    .nav-links
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        li
+            padding: .5rem;
+            list-style: none;    
+        a
+            line-height: 1.5rem;
+            font-size: $font-size-base;
+            color: $gray-500;
+            font-weight: 600;
+            &:hover 
+                text-decoration: none;
+                color: $gray-100;
+    .menu-button
+        display: none;
+    i
+        display: none;
+
+.center-brand
+    justify-content: center;
+    width: 50%;
+    padding: .3rem;
+    h2
+        overflow: hidden;
+        font-size: $font-size-xl;
+@media screen and (max-width: 870px)
+    nav
+        .nav-links
+            display: block;
+            transition: transform 0.3s ease-in-out;
+            transform: scaleY(0);
+            transform-origin: top;
+            position: absolute;
+            left: 0;
+            margin-top: .25rem;
+            width: 100%;
+            background: $dark;
+            li
+                padding: 0;
+            a
+                text-align: center;
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: .5rem;
+            li:hover
+                background: $gray-700;
+        .menu-button
+            display: flex;
+            flex-direction: row;
+            background: transparent;
+            border: 1px solid $gray-600;
+            color: $gray-600;
+            border-radius: 0.25rem;
+            height: 100%;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            margin-left: .5rem;
+            &:hover
+                border: 1px solid $gray-100;
+                color: $gray-100;
+            i
+                display: block;
+                font-size: $font-size-xxl;
+        .show
+            transform: scaleY(1);
+.left-nav
+    width: 25%;
+
+.right-nav
+    width: 25%;
+    padding: .1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: .5rem;
+    button
+        font-size: $font-size-lg;
+        font-weight: 600;
+        width: 2.3rem;
+        border-radius: 50%;
+        background-color: $success;
+        border: none;
+        color: $dark;
+    .dropdown
+        display: flex;
+        flex-direction: column; 
+        position: absolute;
+        width: 10rem;
+        margin-top: 3rem;
+        list-style: none;
+        background-color: $gray-100;
+        box-shadow: 5px 10px 10px $gray-400;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.3s ease-in-out;
+        .arrow-up
+            display: block;
+            position: absolute;
+            top: -1rem;
+            right: .6rem;
+            color: $gray-100;
+            font-size: $font-size-xxl;
+            z-index: -1;
+        li 
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            &:hover
+                background-color: $gray-300;
+            i 
+                display: block;
+                padding-top: .8rem;
+                padding-left: .8rem;
+                width: 3rem;
+                color: $dark;
+            a
+                display: block;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: .8rem;
+                padding-bottom: .8rem;
+                text-align: left;
+                width: 100%;
+                height: 100%;
+                line-height: 1rem;
+                font-size: $font-size-base;
+                color: $dark;
+                &:hover
+                    text-decoration: none;
+            &:last-of-type
+                border-top: 1px solid $gray-300;
+    .show
+        transform: scaleY(1);
