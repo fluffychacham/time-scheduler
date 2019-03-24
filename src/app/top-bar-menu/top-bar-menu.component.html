@@ -1,6 +1,6 @@
 <nav class="nav-container">
     <div class="left-nav">
-        <button type="button" class="menu-button" (click)="toggleNavLinks()">
+        <button type="button" class="menu-button" (click)="toggleNavLinks($event)">
             <i class="fas fa-bars"></i>
         </button>
         <ul [className]="showNavLinks ? 'nav-links show' : 'nav-links'">
@@ -19,7 +19,7 @@
             <h2>{{title}}</h2>
         </div>
     <div class="right-nav">
-        <button type="button" (click)="toggleUserDropdown()">{{username}}</button>
+        <button type="button" class="userButton" (click)="toggleUserDropdown()">{{username}}</button>
         <ul class="dropdown" [className]="showUserDropdown ? 'dropdown show' : 'dropdown'">
             <i class="fas fa-caret-up arrow-up"></i>
             <li>

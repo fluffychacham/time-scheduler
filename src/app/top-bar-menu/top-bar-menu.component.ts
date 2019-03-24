@@ -1,49 +1,33 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { 
-  trigger,
-  state,
-  style,
-  animate,
-  transition
- } from '@angular/animations';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-top-bar-menu',
   templateUrl: './top-bar-menu.component.html',
   styleUrls: ['./top-bar-menu.component.sass'],
-  animations: [
-    trigger('navLinks',[
-      state('show', style({
-        height: 'auto'        
-      })),
-      state('hidden', style({
-        height: '0'
-      })),
-      transition('hidden => show', [
-        animate('.5s .5s ease-in-out')
-      ]),
-      transition('show => hidden', [
-        animate('.5s .5s ease-in-out')
-      ])
-    ])
-  ]
 })
 export class TopBarMenuComponent implements OnInit {
 
   title = "Time Scheduler";
 
-  username = "K";
+  username = "C";
 
   showNavLinks = false;
   showUserDropdown = false;
 
   constructor() {}
 
-  @HostListener('document:click')
-  clickout(){
+  @HostListener('document:click', ['$event'])
+  onclick(event){
+    if(!(event.target.className == 'fas fa-bars' || 
+      event.target.className == "menu-button" || 
+      event.target.className == 'userButton')){
+      this.showNavLinks = false;
+      this.showUserDropdown = false;
+    }
   }
 
-  toggleNavLinks(){
+  toggleNavLinks(event){
     this.showNavLinks = !this.showNavLinks;
   }
 
