@@ -4,31 +4,88 @@ nav
     font-family: $font-family;
     height: 2.5rem;
     background-color: $dark;
-    width: 100%;
     color: white;
     display: flex;
     flex-direction: row;
     padding: .25rem;
     .nav-links
         display: flex;
-        flex-wrap: nowrap;
-        overflow: hidden;
-        li
-            padding: .5rem;
-            list-style: none;    
-        a
-            text-decoration: none;
-            line-height: 1.5rem;
-            font-size: $font-size-base;
+        flex-direction: column;
+        transition: transform 0.15s ease-in-out;
+        transform: translateX(-15rem);
+        //transform-origin: top;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 15rem;
+        background: $dark;
+        height: 100%;
+        .close
             color: $gray-500;
+            text-align: left;
+            left: 0;
+            font-size: 2rem;
+            padding: .5rem;
+            padding-left: 1rem;
             font-weight: 600;
-            &:hover 
+            border-bottom: 1px solid $cyan;
+            &:hover
                 color: $gray-100;
+        li
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            list-style: none;
+            border-bottom: 1px solid $gray-700;
+            i
+                padding: .5rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                border-right: 1px solid $cyan;
+                width: 2rem;
+                color: $gray-100;
+                &:hover
+                    color: $gray-100;
+            a
+                text-decoration: none;
+                line-height: 1.5rem;
+                font-size: $font-size-base;
+                color: $gray-500;
+                font-weight: 600;
+                text-align: left;
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: .5rem;
+                padding-left: .75rem;
+                &:hover
+                    color: $gray-100;
+            &:hover
+                color: $gray-100;
+                background: $gray-700;
     .menu-button
-        display: none;
-    i
-        display: none;
-
+        display: flex;
+        flex-direction: row;
+        background: transparent;
+        transition: transform 0.25s ease-in-out;
+        border: 1px solid $gray-600;
+        color: $gray-600;
+        border-radius: 0.25rem;
+        height: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-left: .5rem;
+        outline: none;
+        &:hover
+            border: 1px solid $gray-100;
+            color: $gray-100;
+        i
+            display: block;
+            font-size: $font-size-xxl;
+    .hide-menu-button
+        transform: translateX(-10rem);
+    .show
+        transform: translateX(0);
 .center-brand
     justify-content: center;
     width: 50%;
@@ -36,47 +93,6 @@ nav
     h2
         overflow: hidden;
         font-size: $font-size-xl;
-@media screen and (max-width: 870px)
-    nav
-        .nav-links
-            display: block;
-            transition: transform 0.1s ease-in-out;
-            transform: scaleY(0);
-            transform-origin: top;
-            position: absolute;
-            left: 0;
-            margin-top: .25rem;
-            width: 100%;
-            background: $dark;
-            li
-                padding: 0;
-            a
-                text-align: center;
-                display: block;
-                width: 100%;
-                height: 100%;
-                padding: .5rem;
-            li:hover
-                background: $gray-700;
-        .menu-button
-            display: flex;
-            flex-direction: row;
-            background: transparent;
-            border: 1px solid $gray-600;
-            color: $gray-600;
-            border-radius: 0.25rem;
-            height: 100%;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            margin-left: .5rem;
-            &:hover
-                border: 1px solid $gray-100;
-                color: $gray-100;
-            i
-                display: block;
-                font-size: $font-size-xxl;
-        .show
-            transform: scaleY(1);
 .left-nav
     width: 25%;
 
@@ -94,6 +110,7 @@ nav
         background-color: $success;
         border: none;
         color: $dark;
+        outline: none;
     .dropdown
         display: flex;
         flex-direction: column; 
@@ -102,7 +119,7 @@ nav
         margin-top: 3rem;
         list-style: none;
         background-color: $gray-100;
-        box-shadow: 5px 10px 10px $gray-400;
+        box-shadow: 5px 5px 10px $gray-400;
         transform: scaleY(0);
         transform-origin: top;
         transition: transform 0.1s ease-in-out;

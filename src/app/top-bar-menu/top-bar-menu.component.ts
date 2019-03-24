@@ -27,7 +27,7 @@ export class TopBarMenuComponent implements OnInit {
     }
   }
 
-  toggleNavLinks(event){
+  toggleNavLinks(){
     this.showNavLinks = !this.showNavLinks;
   }
 

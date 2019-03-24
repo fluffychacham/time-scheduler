@@ -1,16 +1,24 @@
 <nav class="nav-container">
     <div class="left-nav">
-        <button type="button" class="menu-button" (click)="toggleNavLinks($event)">
+        <button type="button" [className]="showNavLinks ? 'menu-button hide-menu-button' : 'menu-button'" (click)="toggleNavLinks()">
             <i class="fas fa-bars"></i>
         </button>
         <ul [className]="showNavLinks ? 'nav-links show' : 'nav-links'">
+            <i class="fas fa-times close"></i>
             <li>
+                <i class="fas fa-tachometer-alt"></i>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <i class="fas fa-seedling"></i>
                 <a href="#">Habits</a>
             </li>
             <li>
+                <i class="fas fa-calendar-alt"></i>
                 <a href="#">Calendar</a>
             </li>
             <li>
+                <i class="fas fa-money-bill-wave"></i>
                 <a href="#">Budget</a>
             </li>
         </ul>
@@ -21,7 +29,7 @@
     <div class="right-nav">
         <button type="button" class="userButton" (click)="toggleUserDropdown()">{{username}}</button>
         <ul class="dropdown" [className]="showUserDropdown ? 'dropdown show' : 'dropdown'">
-            <i class="fas fa-caret-up arrow-up"></i>
+            <i class="fas fa-caret-up arrow-up"(click)="toggleNavLinks()"></i>
             <li>
                 <i class="fas fa-user"></i>
                 <a href="#">Profile</a>
