@@ -20,7 +20,7 @@ export class TopBarMenuComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   onclick(event){
     if(!(event.target.className == 'fas fa-bars' || 
-      event.target.className == "menu-button" || 
+      event.target.className == 'menu-button hide-menu-button' ||
       event.target.className == 'userButton')){
       this.showNavLinks = false;
       this.showUserDropdown = false;
