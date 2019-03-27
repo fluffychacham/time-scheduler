@@ -8,9 +8,74 @@ ul
         a
             text-decoration: none;
 .left-content
-    width: 25%;
+    width: 7rem;
+    display: flex;
+    flex-direction: column;
+    .month
+        background-color: $blue-500;
+        font-size: $font-size-xl;
+        height: 2rem;
+        display: flex;
+        border-top: 1px solid $blue-100;
+        border-bottom: 2px solid $blue-600;
+        p
+            margin: auto;
+            text-align: center;
+    .day
+        display: flex;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        font-size: $font-size-3xl;
+        background-color: $blue-200;
+        border-bottom: 2px solid $blue-300;
+        p
+            margin: auto;
 .right-content
-    width: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .week
+        height: 1.75rem;
+        display: flex;
+        width: 100%;
+        text-align: center;
+        color: $gray-700;
+        background-color: $gray-300;
+        font-size: $font-size-lg;
+        font-weight: 500;
+        border-top: 1px solid $white;
+        border-bottom: 2px solid $gray-400;
+        p 
+            margin: auto;
+            text-align: center;
+    ul
+        display: flex;
+        flex-direction: row;
+        li 
+            display: flex;
+            list-style: none;
+            width: 20%;
+            border-right: 1px solid $gray-400;
+            &:last-of-type
+                border: none;
+            a 
+                text-decoration: none;
+                margin: auto;
+                text-align: center;
+        .days
+            font-size: $font-size-3xl;
+            height: 4rem;
+            a 
+                color: $gray-600;
+        .weeks
+            font-size: $font-size-xl;
+            height: 2rem;
+            background-color: $gray-300;
+            a 
+                color: $gray-700;
 .card
     display: flex;
     padding: 0;
+    height: 8rem;
+    color: $dark;

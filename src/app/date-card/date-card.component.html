@@ -1,19 +1,27 @@
 <div class="card">
     <div class="left-content">
-        <div class="month">{{month}}</div>
-        <div class="day">{{day}}</div>
+        <div class="month">
+            <p>{{month}}</p>
+        </div>
+        <div class="day">
+            <p>{{day}}</p>
+        </div>
     </div>
     <div class="right-content">
-        <div class="week">{{week}}</div>
-        <ul>
-            <li class="days" *ngFor="let dayNumber of days">
-                <a href="#">{{dayNumber}}</a>
-            </li>
-        </ul>
-        <ul>
-            <li class="weeks" *ngFor="let weekName of weeks">
-                <a href="#">{{weekName}}</a>
-            </li>
-        </ul>
+        <div class="week">
+            <p>{{week}}</p>
+        </div>
+        <div class="items">
+            <ul>
+                <li  class="days" *ngFor="let dayNumber of days">
+                    <a href="#">{{dayNumber}}</a>
+                </li>
+            </ul>
+            <ul>
+                <li class="weeks" *ngFor="let weekName of weeks">
+                    <a href="#">{{weekName}}</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
