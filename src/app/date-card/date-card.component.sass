@@ -1,12 +1,5 @@
 @import '../../css/variables'
 
-ul
-    display: flex;
-    justify-content: center;
-    li
-        list-style: none;
-        a
-            text-decoration: none;
 .left-content
     width: 7rem;
     display: flex;
@@ -35,6 +28,7 @@ ul
     width: 100%;
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid $gray-500;
     .week
         height: 1.75rem;
         display: flex;
@@ -58,20 +52,21 @@ ul
             width: 20%;
             border-right: 1px solid $gray-400;
             &:last-of-type
-                border: none;
+                border-right: none;
             a 
                 text-decoration: none;
                 margin: auto;
                 text-align: center;
         .days
-            font-size: $font-size-3xl;
+            font-size: $font-size-2xl;
             height: 4rem;
             a 
                 color: $gray-600;
         .weeks
-            font-size: $font-size-xl;
+            font-size: $font-size-lg;
             height: 2rem;
             background-color: $gray-300;
+            border-top: 1px solid $white;
             a 
                 color: $gray-700;
 .card
